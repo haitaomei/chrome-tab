@@ -1,0 +1,114 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #202124;
+  --secondary-text-color: #5f6368;
+  --input-bg-color: #fff;
+  --input-border-color: #dfe1e5;
+  --input-shadow-color: rgba(32, 33, 36, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #202124;
+    --text-color: #e8eaed;
+    --secondary-text-color: #969ba1;
+    --input-bg-color: #303134;
+    --input-border-color: #5f6368;
+    --input-shadow-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-message {
+  margin-bottom: 30px;
+}
+
+.welcome-message h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+#search-form {
+  width: 100%;
+}
+
+#search-input {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--input-border-color);
+  color: var(--text-color);
+  border-radius: 24px;
+  font-size: 18px;
+  box-shadow: 0 1px 6px var(--input-shadow-color);
+  outline: none;
+}
+
+#search-input:focus {
+  border-color: #4285f4;
+}
+
+.bookmarks {
+  margin-bottom: 40px;
+}
+
+.bookmarks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bookmarks li {
+  margin: 0 10px;
+}
+
+.bookmarks a {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+.bookmarks a:hover {
+  color: #4285f4;
+}
+
+.bookmarks i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.openai-logo {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.bookmarks a:hover .openai-logo {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(3433%) hue-rotate(206deg) brightness(97%) contrast(93%);
+}
