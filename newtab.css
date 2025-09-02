@@ -44,7 +44,7 @@ body {
 }
 
 .welcome-message h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 500;
 }
 
@@ -88,7 +88,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 14px;
+  font-size: 16px;
   transition: color 0.2s;
 }
 
@@ -96,17 +96,8 @@ body {
   color: #4285f4;
 }
 
-.bookmarks i {
-  font-size: 24px;
+.bookmarks img {
+  width: 32px;
+  height: 32px;
   margin-bottom: 5px;
-}
-
-.openai-logo {
-  width: 20px;
-  height: 20px;
-  margin-bottom: 5px;
-}
-
-.bookmarks a:hover .openai-logo {
-  filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(3433%) hue-rotate(206deg) brightness(97%) contrast(93%);
 }
