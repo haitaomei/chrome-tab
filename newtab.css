@@ -281,22 +281,22 @@ body::before {
   opacity: 0.15;
 }
 
-/* Cube */
+/* Cube - zooms in from far away, moves across, and disappears */
 .cube {
   width: 100px;
   height: 100px;
   top: 15%;
-  right: 10%;
+  left: -20%;
   transform-style: preserve-3d;
-  animation: rotateCube 20s infinite linear;
+  animation: cubeJourney 25s infinite linear;
 }
 
 .cube-face {
   position: absolute;
   width: 100px;
   height: 100px;
-  border: 2px solid var(--accent-color);
-  background: rgba(66, 133, 244, 0.15);
+  border: 1px solid rgba(66, 133, 244, 0.2);
+  background: rgba(66, 133, 244, 0.06);
   backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
@@ -308,45 +308,57 @@ body::before {
 
 .cube-face.front  {
   transform: translateZ(50px);
-  background: rgba(66, 133, 244, 0.2);
+  background: rgba(66, 133, 244, 0.08);
 }
 .cube-face.back   {
   transform: translateZ(-50px) rotateY(180deg);
-  background: rgba(66, 133, 244, 0.15);
+  background: rgba(66, 133, 244, 0.06);
 }
 .cube-face.right  {
   transform: rotateY(90deg) translateZ(50px);
-  background: rgba(138, 180, 248, 0.15);
+  background: rgba(138, 180, 248, 0.06);
 }
 .cube-face.left   {
   transform: rotateY(-90deg) translateZ(50px);
-  background: rgba(138, 180, 248, 0.2);
+  background: rgba(138, 180, 248, 0.08);
 }
 .cube-face.top    {
   transform: rotateX(90deg) translateZ(50px);
-  background: rgba(66, 133, 244, 0.25);
+  background: rgba(66, 133, 244, 0.1);
 }
 .cube-face.bottom {
   transform: rotateX(-90deg) translateZ(50px);
-  background: rgba(66, 133, 244, 0.1);
+  background: rgba(66, 133, 244, 0.05);
 }
 
-@keyframes rotateCube {
+@keyframes cubeJourney {
   0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    transform: translateX(0) translateY(0) scale(0.3) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateX(60vw) translateY(20vh) scale(1.2) rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    opacity: 0.15;
+  }
+  90% {
+    opacity: 0.15;
   }
   100% {
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    transform: translateX(120vw) translateY(40vh) scale(0.5) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    opacity: 0;
   }
 }
 
-/* Cone */
+/* Cone - moves from right to left with rotation */
 .cone {
   width: 0;
   height: 0;
   top: 60%;
-  left: 8%;
-  animation: rotateCone 15s infinite linear;
+  right: -15%;
+  animation: coneJourney 30s infinite linear;
 }
 
 .cone-base {
@@ -369,18 +381,34 @@ body::before {
   transform-origin: center bottom;
 }
 
-@keyframes rotateCone {
-  0% { transform: rotateY(0deg) rotateX(20deg); }
-  100% { transform: rotateY(360deg) rotateX(20deg); }
+@keyframes coneJourney {
+  0% {
+    transform: translateX(0) translateY(0) rotateY(0deg) rotateX(20deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateX(-60vw) translateY(-15vh) rotateY(180deg) rotateX(20deg);
+    opacity: 0.15;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(-120vw) translateY(-30vh) rotateY(360deg) rotateX(20deg);
+    opacity: 0;
+  }
 }
 
-/* Möbius Strip */
+/* Möbius Strip - zooms out from close to far away while moving diagonally */
 .mobius {
   width: 120px;
   height: 120px;
-  bottom: 20%;
-  right: 15%;
-  animation: rotateMobius 25s infinite linear;
+  top: 70%;
+  left: -10%;
+  animation: mobiusJourney 35s infinite linear;
 }
 
 .mobius-strip {
@@ -411,9 +439,25 @@ body::before {
   transform: rotateY(-60deg);
 }
 
-@keyframes rotateMobius {
-  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-  100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+@keyframes mobiusJourney {
+  0% {
+    transform: translateX(0) translateY(0) scale(1.5) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateX(50vw) translateY(-35vh) scale(1) rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    opacity: 0.15;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-70vh) scale(0.3) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    opacity: 0;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
