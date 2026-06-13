@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
         scaleMobile: 1.00,
         color: 0x203aff,
         color2: 0x3e3eca,
-        showLines: false
+        showLines: false,
+        backgroundColor: 0x141313,
       },
       HALO: {
         el: "#vanta-bg",
