@@ -31,44 +31,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Create 3D shapes in background
-  create3DShapes();
+  // Animated birds background (Vanta.js)
+  if (window.VANTA && window.VANTA.BIRDS) {
+    VANTA.BIRDS({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0x50505,
+      color1: 0x4a00ff,
+      color2: 0x8ac5ff,
+      colorMode: "lerp",
+      birdSize: 0.50,
+      wingSpan: 10.00,
+      speedLimit: 4.00,
+      separation: 41.00,
+      cohesion: 100.00,
+      backgroundAlpha: 0.01
+    });
+  }
 });
-
-function create3DShapes() {
-  const shapesContainer = document.createElement('div');
-  shapesContainer.className = 'shapes-container';
-
-  // Create Cube
-  const cube = document.createElement('div');
-  cube.className = 'shape-3d cube';
-  const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
-  faces.forEach(face => {
-    const faceDiv = document.createElement('div');
-    faceDiv.className = `cube-face ${face}`;
-    cube.appendChild(faceDiv);
-  });
-  shapesContainer.appendChild(cube);
-
-  // Create Cone
-  const cone = document.createElement('div');
-  cone.className = 'shape-3d cone';
-  const coneBase = document.createElement('div');
-  coneBase.className = 'cone-base';
-  const coneSide = document.createElement('div');
-  coneSide.className = 'cone-side';
-  cone.appendChild(coneBase);
-  cone.appendChild(coneSide);
-  shapesContainer.appendChild(cone);
-
-  // Create Möbius Strip
-  const mobius = document.createElement('div');
-  mobius.className = 'shape-3d mobius';
-  const mobiusStrip = document.createElement('div');
-  mobiusStrip.className = 'mobius-strip';
-  mobius.appendChild(mobiusStrip);
-  shapesContainer.appendChild(mobius);
-
-  // Add container to body
-  document.body.insertBefore(shapesContainer, document.body.firstChild);
-}
