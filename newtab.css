@@ -78,6 +78,38 @@ body::before {
   z-index: 0;
 }
 
+#bg-picker {
+  position: fixed;
+  bottom: 14px;
+  left: 14px;
+  z-index: 2;
+  font-size: 11px;
+  font-family: inherit;
+  color: var(--secondary-text-color);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 4px 8px;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.15s ease;
+}
+
+#bg-picker:hover,
+#bg-picker:focus {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  #bg-picker {
+    background-color: rgba(48, 49, 52, 0.5);
+    border: 1px solid rgba(95, 99, 104, 0.3);
+  }
+}
+
 .container {
   width: 100%;
   max-width: 650px;
