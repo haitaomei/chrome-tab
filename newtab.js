@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Animated birds background (Vanta.js)
-  if (window.VANTA && window.VANTA.BIRDS) {
-    VANTA.BIRDS({
+  // Animated dots background (Vanta.js)
+  if (window.VANTA && window.VANTA.DOTS) {
+    VANTA.DOTS({
       el: "#vanta-bg",
       mouseControls: true,
       touchControls: true,
@@ -42,16 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      backgroundColor: 0x50505,
-      color1: 0x4a00ff,
-      color2: 0x8ac5ff,
-      colorMode: "lerp",
-      birdSize: 0.50,
-      wingSpan: 10.00,
-      speedLimit: 4.00,
-      separation: 41.00,
-      cohesion: 100.00,
-      backgroundAlpha: 0.01
+      color: 0x203aff,
+      color2: 0x3e3eca,
+      showLines: false
     });
   }
 });
