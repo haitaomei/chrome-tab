@@ -81,6 +81,26 @@ document.addEventListener('DOMContentLoaded', function() {
         cohesion: 100.00,
         backgroundAlpha: 0.01
       },
+      SIGMA: {
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0x50505,
+        color1: 0x6b7894,       // medium slate
+        color2: 0x9fb0cf,       // light blue-grey
+        colorMode: "lerp",
+        birdSize: 1.20,
+        wingSpan: 10.00,
+        speedLimit: 4.00,
+        separation: 41.00,
+        cohesion: 100.00,
+        backgroundAlpha: 0.01
+      },
       RINGS: {
         el: "#vanta-bg",
         mouseControls: true,
